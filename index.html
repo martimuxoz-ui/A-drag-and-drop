@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumemos balones</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="juego">
+  <h1>⚽ ¡Sumemos balones! ⚽</h1>
+  <div class="marcador" aria-label="Calificación">
+    <div>Puntos<strong id="puntos">0</strong></div>
+    <div>Aciertos<strong id="aciertos">0</strong></div>
+    <div>Errores<strong id="errores">0</strong></div>
+  </div>
+  <p class="instruccion">Cuenta los balones de los dos grupos. Luego arrastra el balón de abajo a la zona amarilla tantas veces como dé la suma.</p>
+  <div class="operacion">
+    <div id="grupo1" class="grupo"></div>
+    <div class="signo">+</div>
+    <div id="grupo2" class="grupo"></div>
+    <div class="signo">=</div>
+    <div id="resultado" class="resultado"><span class="ayuda">Suelta aquí</span></div>
+  </div>
+  <div class="bandeja">
+    <div id="fuente" class="balon fuente" title="Arrástrame">⚽</div>
+    <span>Balón para arrastrar (¡puedes usarlo muchas veces!)</span>
+  </div>
+  <p id="contador">Balones: 0</p>
+  <button id="verificar">Verificar</button>
+  <button id="nuevo" class="nuevo">Nueva suma</button>
+  <p id="mensaje" aria-live="polite"></p>
+  <div id="estrellas" aria-live="polite"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

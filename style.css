@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #12351f;
+  background: repeating-linear-gradient(90deg, #385f8b 0 60px, #0fa0e4 60px 120px);
+}
+
+.juego {
+  width: min(900px, 100%);
+  margin: 16px;
+  padding: 24px;
+  text-align: center;
+  background: #fffdf5;
+  border: 4px solid #12351f;
+  border-radius: 24px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+}
+
+.instruccion {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+}
+
+.operacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.grupo,
+.resultado {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 150px;
+  min-height: 150px;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.grupo {
+  background: #e8f4ea;
+  border: 3px solid #12351f;
+}
+
+.resultado {
+  min-width: 220px;
+  min-height: 180px;
+  background: #fff3c4;
+  border: 3px dashed #c98a00;
+  transition: background .15s;
+}
+
+.resultado.encima {
+  background: #ffe27a;
+  border-style: solid;
+}
+
+.resultado .ayuda {
+  align-self: center;
+  color: #8a6200;
+  font-weight: bold;
+}
+
+.signo {
+  font-size: 2.6rem;
+  font-weight: bold;
+}
+
+.balon {
+  width: 44px;
+  height: 44px;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.balon:hover {
+  transform: scale(1.12);
+}
+
+.balon.arrastrando {
+  visibility: hidden;
+}
+
+.quitar {
+  background: #fff;
+}
+
+.fantasma {
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+  transform: scale(1.3) rotate(15deg);
+}
+
+.grupo .balon {
+  cursor: default;
+}
+
+.grupo .balon:hover {
+  transform: none;
+}
+
+.bandeja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.fuente {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  line-height: 1;
+  background: #fff;
+  border: 3px solid #12351f;
+  border-radius: 50%;
+}
+
+#contador {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  margin: 4px;
+  border: 3px solid #12351f;
+  border-radius: 999px;
+  background: #ffd23f;
+  color: #12351f;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffc300;
+}
+
+button:focus-visible {
+  outline: 3px solid #12351f;
+  outline-offset: 3px;
+}
+
+button.nuevo {
+  background: #fff;
+}
+
+#mensaje {
+  min-height: 2em;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#mensaje.ok {
+  color: #1a7a32;
+}
+
+#mensaje.mal {
+  color: #b3261e;
+}
+
+.marcador {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.marcador div {
+  min-width: 96px;
+  padding: 6px 12px;
+  background: #e8f4ea;
+  border: 3px solid #12351f;
+  border-radius: 14px;
+  font-size: .9rem;
+}
+
+.marcador strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+#estrellas {
+  font-size: 2rem;
+  min-height: 2.6rem;
+  letter-spacing: 4px;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .signo {
+    font-size: 2rem;
+  }
+}
